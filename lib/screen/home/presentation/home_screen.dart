@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moovbe/core/utils/color_config.dart';
+import 'package:moovbe/screen/home/presentation/widgets/custom_bus_tile.dart';
+import 'package:moovbe/screen/home/presentation/widgets/custom_managecard.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: kGrey,
         centerTitle: true,
         toolbarHeight: 70,
         title: Image.asset(
@@ -15,11 +19,42 @@ class HomeScreen extends StatelessWidget {
           width: 120,
         ),
       ),
-      body: ListView(
-        shrinkWrap: true,
-        children: [
-          
-
+      body: ListView(shrinkWrap: true, children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              CustomManageCard(
+                cardName: 'Bus',
+                cardType: 'Manage your Bus',
+                cardColor: kRed,
+                cardImage: 'assets/shapes/bus.png',
+              ),
+              CustomManageCard(
+                cardName: 'Driver',
+                cardColor: kGrey,
+                cardType: 'Manage your Driver',
+                cardImage: 'assets/shapes/driver.png',
+              ),
+            ],
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 15),
+          child: Text(
+            '21 Buses Found',
+            style: TextStyle(
+              color: kTextColor,
+              fontSize: 15,
+            ),
+          ),
+        ),
+        CustomBusTile(
+          busName: 'KSRTS',
+          busType: 'Swift Scania P-Series',
+          onClick: () {},
+        )
       ]),
     );
   }

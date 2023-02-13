@@ -24,18 +24,26 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              CustomManageCard(
-                cardName: 'Bus',
-                cardType: 'Manage your Bus',
-                cardColor: kRed,
-                cardImage: 'assets/shapes/bus.png',
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: const CustomManageCard(
+                  cardName: 'Bus',
+                  cardType: 'Manage your Bus',
+                  cardColor: kRed,
+                  cardImage: 'assets/shapes/bus.png',
+                ),
               ),
-              CustomManageCard(
-                cardName: 'Driver',
-                cardColor: kGrey,
-                cardType: 'Manage your Driver',
-                cardImage: 'assets/shapes/driver.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/drivers_list_screen');
+                },
+                child: const CustomManageCard(
+                  cardName: 'Driver',
+                  cardColor: kGrey,
+                  cardType: 'Manage your Driver',
+                  cardImage: 'assets/shapes/driver.png',
+                ),
               ),
             ],
           ),

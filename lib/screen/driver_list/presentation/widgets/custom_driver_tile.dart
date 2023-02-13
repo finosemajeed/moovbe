@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:moovbe/core/utils/color_config.dart';
 
-class CustomBusTile extends StatelessWidget {
-  const CustomBusTile({
+class CustomDriverTile extends StatelessWidget {
+  const CustomDriverTile({
     super.key,
-    required this.busName,
-    required this.busType,
+    required this.driverName,
+    required this.licNumber,
     this.onClick,
   });
-  final String busName;
-  final String busType;
+  final String driverName;
+  final String licNumber;
   final Function()? onClick;
 
   @override
@@ -23,16 +23,16 @@ class CustomBusTile extends StatelessWidget {
             leading: Container(
               height: double.infinity,
               color: kGrey.withOpacity(0.06),
-              child: Image.asset('assets/shapes/bus2.png'),
+              child: Image.asset('assets/shapes/user.png'),
             ),
-            title: Text(busName),
-            subtitle: Text(busType),
+            title: Text(driverName),
+            subtitle: Text(licNumber),
             trailing: ElevatedButton(
               onPressed: onClick,
               style: ElevatedButton.styleFrom(
                 backgroundColor: kRed,
               ),
-              child: const Text("Manage"),
+              child: const Text("Delete"),
             ),
           ),
         ),

@@ -61,7 +61,9 @@ class HomeScreen extends StatelessWidget {
         CustomBusTile(
           busName: 'KSRTS',
           busType: 'Swift Scania P-Series',
-          onClick: () {},
+          onClick: () {
+            Navigator.of(context).pushNamed('/bus_details_screen');
+          },
         )
       ]),
     );

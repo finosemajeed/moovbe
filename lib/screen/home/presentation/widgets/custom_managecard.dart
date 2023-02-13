@@ -50,9 +50,7 @@ class CustomManageCard extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: Expanded(
-              child: Image.asset(cardImage),
-            ),
+            child: Image.asset(cardImage),
           )
         ]),
       ),

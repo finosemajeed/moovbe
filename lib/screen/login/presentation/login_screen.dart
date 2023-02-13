@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moovbe/core/utils/color_config.dart';
 import 'package:moovbe/core/widgets/custom_button.dart';
 import 'package:moovbe/screen/login/presentation/widgets/custom_appbar.dart';
-import 'package:moovbe/screen/login/presentation/widgets/custom_inputfield.dart';
+import 'package:moovbe/core/widgets/custom_inputfield.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

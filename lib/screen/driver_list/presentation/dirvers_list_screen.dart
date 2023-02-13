@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moovbe/core/utils/color_config.dart';
+import 'package:moovbe/core/widgets/custom_button.dart';
 import 'package:moovbe/screen/driver_list/presentation/widgets/custom_driver_tile.dart';
 
 class DriversListScreen extends StatelessWidget {
@@ -24,16 +25,31 @@ class DriversListScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-              child: ListView(
-            children: [
-              CustomDriverTile(
-                driverName: 'Rohit Sharma',
-                licNumber: 'hdhkfhd',
-                onClick: () {},
-              )
-            ],
-          ))
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return CustomDriverTile(
+                  driverName: 'Rohit Sharma',
+                  licNumber: 'hdhkfhd',
+                  onClick: () {},
+                );
+              },
+            ),
+          ),
         ]),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+        child: CustomButton(
+          buttonColor: kRed,
+          label: 'Add Driver',
+          labelColor: kWhite,
+          onPress: () {
+            Navigator.of(context).pushNamed('/add_driver_screen');
+          },
+        ),
       ),
     );
   }
